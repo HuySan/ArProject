@@ -43,3 +43,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: sdf
+    uniqueID: 654850469
+    locked: 0

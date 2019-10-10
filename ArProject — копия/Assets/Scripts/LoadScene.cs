@@ -10,6 +10,11 @@ public class LoadScene : MonoBehaviour {
         SceneManager.LoadScene(1);
     }
 
+    public void LoadSceneMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void LoadSceneExit()
     {
         Application.Quit();

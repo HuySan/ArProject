@@ -7,6 +7,7 @@ public class ArrObjects : MonoBehaviour
 {
     public GameObject[] objects;
     public GameObject[] texts;
+    public int itemCount;    
 
     int indexFlag;
 
@@ -30,8 +31,6 @@ public class ArrObjects : MonoBehaviour
        
     }
 
-
-
     public void OnMouseLeft()
     {
         objects[indexFlag].SetActive(false);
@@ -44,6 +43,26 @@ public class ArrObjects : MonoBehaviour
         objects[indexFlag].SetActive(true);
         texts[indexFlag].SetActive(true);
     }
+
+    public void Update()
+    {
+        //Рабочая вещь
+        itemCount = 0;
+        for (int key = 0; key < objects.Length; key++)
+        {
+            if (objects[key].activeInHierarchy)
+            {
+                itemCount++;
+            }
+        }
+        if (itemCount > 1)
+        {
+            objects[indexFlag].SetActive(false);
+            texts[indexFlag].SetActive(false);
+        }
+    }
+
+   
 
 
 

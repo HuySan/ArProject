@@ -5,19 +5,24 @@ using UnityEngine.UI;
 
 public class question : MonoBehaviour {
     public GameObject obj;
-    public Button exitOff;
+    public Button[] buttons;
 
 
-    public void OnMouseDown()
+    public void OnMouseX()
         {
 //Тут будет имя тега с инфой
             obj.SetActive(true);
-            exitOff.interactable = false;
-            PlayerPrefs.SetInt("vault",1);
+            for (int key = 0; key < buttons.Length; key++) {
+                buttons[key].interactable = false;
+            }
     }
     public void ExitWindow()
         {
             obj.SetActive(false);
-            exitOff.interactable = true;
+            PlayerPrefs.SetInt("vault", 1);
+            for (int key = 0; key < buttons.Length; key++)
+            {
+                buttons[key].interactable = true;
+            }
     }
 }
