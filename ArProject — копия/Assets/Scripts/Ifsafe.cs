@@ -14,7 +14,7 @@ public class Ifsafe : MonoBehaviour
         if (PlayerPrefs.HasKey("vault"))
         {
             obj.SetActive(false);
-            //layerPrefs.DeleteKey("vault");
+            //PlayerPrefs.DeleteKey("vault");
         }
        
     }
